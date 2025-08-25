@@ -3245,7 +3245,7 @@ function initHashClick(){
     var $doc = $j('html, body');
     var paspartuScrollAdd = $j('body').hasClass('paspartu_on_top_fixed') ? $window_width*paspartu_width : 0;
     var scrollToAmount;
-    $j(document).on( "click", ".main_menu a, .vertical_menu a, .qbutton:not(.contact_form_button, .qode-archive-submit-button, .qode-listing-archive-load-more, .qode-rating-form-trigger, .qode-lms-actions-buttons, .qode-tours-search-submit), .anchor, .widget li.anchor a", function(){
+    $j(document).on( "click", ".main_menu a, .vertical_menu a, .qbutton:not(.contact_form_button, .qode-archive-submit-button, .qode-listing-archive-load-more, .qode-rating-form-trigger, .qode-lms-actions-buttons, .qode-tours-search-submit, .qodef-property-filter-button), .anchor, .widget li.anchor a", function(){
         var $this = $j(this);
         var hash = $j(this).prop("hash");
         var top_header_height;

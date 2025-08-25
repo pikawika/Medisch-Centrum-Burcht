@@ -3245,7 +3245,7 @@ function initHashClick(){
     var $doc = $j('html, body');
     var paspartuScrollAdd = $j('body').hasClass('paspartu_on_top_fixed') ? $window_width*paspartu_width : 0;
     var scrollToAmount;
-    $j(document).on( "click", ".main_menu a, .vertical_menu a, .qbutton:not(.contact_form_button, .qode-archive-submit-button, .qode-listing-archive-load-more, .qode-rating-form-trigger, .qode-lms-actions-buttons, .qode-tours-search-submit), .anchor, .widget li.anchor a", function(){
+    $j(document).on( "click", ".main_menu a, .vertical_menu a, .qbutton:not(.contact_form_button, .qode-archive-submit-button, .qode-listing-archive-load-more, .qode-rating-form-trigger, .qode-lms-actions-buttons, .qode-tours-search-submit, .qodef-property-filter-button), .anchor, .widget li.anchor a", function(){
         var $this = $j(this);
         var hash = $j(this).prop("hash");
         var top_header_height;
@@ -7327,6 +7327,35 @@ function qodePanelArea(){
 (function($) {
     'use strict';
 
+    var elementorAnimationHolder = {};
+    qode.modules.elementorAnimationHolder = elementorAnimationHolder;
+
+    elementorAnimationHolder.qodeInitElementorAnimationHolder = qodeInitElementorAnimationHolder;
+
+
+    elementorAnimationHolder.qodeOnWindowLoad = qodeOnWindowLoad;
+
+    $(window).on('load', qodeOnWindowLoad);
+
+    /*
+     ** All functions to be called on $(window).load() should be in this function
+     */
+    function qodeOnWindowLoad() {
+        qodeInitElementorAnimationHolder();
+    }
+
+    function qodeInitElementorAnimationHolder(){
+        $j(window).on('elementor/frontend/init', function () {
+            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_animation_holder.default', function() {
+                initElementsAnimation();
+            } );
+        });
+    }
+
+})(jQuery);
+(function($) {
+    'use strict';
+
     var elementorAction = {};
     qode.modules.elementorAction = elementorAction;
 
@@ -7376,35 +7405,6 @@ function qodePanelArea(){
                 parallaxElement.parallax("50%", parallaxSpeed * 0.4);
             })
         }
-    }
-
-})(jQuery);
-(function($) {
-    'use strict';
-
-    var elementorAnimationHolder = {};
-    qode.modules.elementorAnimationHolder = elementorAnimationHolder;
-
-    elementorAnimationHolder.qodeInitElementorAnimationHolder = qodeInitElementorAnimationHolder;
-
-
-    elementorAnimationHolder.qodeOnWindowLoad = qodeOnWindowLoad;
-
-    $(window).on('load', qodeOnWindowLoad);
-
-    /*
-     ** All functions to be called on $(window).load() should be in this function
-     */
-    function qodeOnWindowLoad() {
-        qodeInitElementorAnimationHolder();
-    }
-
-    function qodeInitElementorAnimationHolder(){
-        $j(window).on('elementor/frontend/init', function () {
-            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_animation_holder.default', function() {
-                initElementsAnimation();
-            } );
-        });
     }
 
 })(jQuery);
@@ -7499,35 +7499,6 @@ function qodePanelArea(){
 (function($) {
     'use strict';
 
-    var elementorExpandingImages = {};
-    qode.modules.elementorExpandingImages = elementorExpandingImages;
-
-    elementorExpandingImages.qodeInitElementorExpandingImages = qodeInitElementorExpandingImages;
-
-
-    elementorExpandingImages.qodeOnWindowLoad = qodeOnWindowLoad;
-
-    $(window).on('load', qodeOnWindowLoad);
-
-    /*
-     ** All functions to be called on $(window).load() should be in this function
-     */
-    function qodeOnWindowLoad() {
-        qodeInitElementorExpandingImages();
-    }
-
-    function qodeInitElementorExpandingImages(){
-        $j(window).on('elementor/frontend/init', function () {
-            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_expanding_images.default', function() {
-                initExpandingImages();
-            } );
-        });
-    }
-
-})(jQuery);
-(function($) {
-    'use strict';
-
     var elementorFullscreenSections = {};
     qode.modules.elementorFullscreenSections = elementorFullscreenSections;
 
@@ -7549,6 +7520,35 @@ function qodePanelArea(){
         $j(window).on('elementor/frontend/init', function () {
             elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_fullscreen_sections.default', function() {
                 initFullScreenTemplate();
+            } );
+        });
+    }
+
+})(jQuery);
+(function($) {
+    'use strict';
+
+    var elementorExpandingImages = {};
+    qode.modules.elementorExpandingImages = elementorExpandingImages;
+
+    elementorExpandingImages.qodeInitElementorExpandingImages = qodeInitElementorExpandingImages;
+
+
+    elementorExpandingImages.qodeOnWindowLoad = qodeOnWindowLoad;
+
+    $(window).on('load', qodeOnWindowLoad);
+
+    /*
+     ** All functions to be called on $(window).load() should be in this function
+     */
+    function qodeOnWindowLoad() {
+        qodeInitElementorExpandingImages();
+    }
+
+    function qodeInitElementorExpandingImages(){
+        $j(window).on('elementor/frontend/init', function () {
+            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_expanding_images.default', function() {
+                initExpandingImages();
             } );
         });
     }
@@ -7852,35 +7852,6 @@ function qodePanelArea(){
 (function($) {
     'use strict';
 
-    var elementorOldTab = {};
-    qode.modules.elementorOldTab = elementorOldTab;
-
-    elementorOldTab.qodeInitElementorOldTab = qodeInitElementorOldTab;
-
-
-    elementorOldTab.qodeOnWindowLoad = qodeOnWindowLoad;
-
-    $(window).on('load', qodeOnWindowLoad );
-
-    /*
-     ** All functions to be called on $(window).load() should be in this function
-     */
-    function qodeOnWindowLoad() {
-        qodeInitElementorOldTab();
-    }
-
-    function qodeInitElementorOldTab(){
-        $j(window).on('elementor/frontend/init', function () {
-            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_old_tab.default', function() {
-                initTabs();
-            } );
-        });
-    }
-
-})(jQuery);
-(function($) {
-    'use strict';
-
     var elementorParallaxLayers = {};
     qode.modules.elementorParallaxLayers = elementorParallaxLayers;
 
@@ -7902,6 +7873,35 @@ function qodePanelArea(){
         $j(window).on('elementor/frontend/init', function () {
             elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_parallax_layers.default', function() {
                 parallaxLayers();
+            } );
+        });
+    }
+
+})(jQuery);
+(function($) {
+    'use strict';
+
+    var elementorOldTab = {};
+    qode.modules.elementorOldTab = elementorOldTab;
+
+    elementorOldTab.qodeInitElementorOldTab = qodeInitElementorOldTab;
+
+
+    elementorOldTab.qodeOnWindowLoad = qodeOnWindowLoad;
+
+    $(window).on('load', qodeOnWindowLoad );
+
+    /*
+     ** All functions to be called on $(window).load() should be in this function
+     */
+    function qodeOnWindowLoad() {
+        qodeInitElementorOldTab();
+    }
+
+    function qodeInitElementorOldTab(){
+        $j(window).on('elementor/frontend/init', function () {
+            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_old_tab.default', function() {
+                initTabs();
             } );
         });
     }
@@ -8093,31 +8093,6 @@ function qodePanelArea(){
 (function($) {
     'use strict';
 
-
-    $(window).on('load', qodeOnWindowLoad );
-
-    /*
-     ** All functions to be called on $(window).load() should be in this function
-     */
-    function qodeOnWindowLoad() {
-	    qodeInitUnorderedListAnimation();
-    }
-
-    /*
-     ** Init Unordered List shortcode
-     */
-    function qodeInitUnorderedListAnimation(){
-        $j(window).on('elementor/frontend/init', function () {
-            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_unordered_list.default', function() {
-	            initListAnimation();
-            } );
-        });
-    }
-
-})(jQuery);
-(function($) {
-    'use strict';
-
     var elementorAccordion = {};
     qode.modules.elementorAccordion = elementorAccordion;
 
@@ -8139,6 +8114,31 @@ function qodePanelArea(){
         $j(window).on('elementor/frontend/init', function () {
             elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_accordion.default', function() {
                 qodeInitAccordions();
+            } );
+        });
+    }
+
+})(jQuery);
+(function($) {
+    'use strict';
+
+
+    $(window).on('load', qodeOnWindowLoad );
+
+    /*
+     ** All functions to be called on $(window).load() should be in this function
+     */
+    function qodeOnWindowLoad() {
+	    qodeInitUnorderedListAnimation();
+    }
+
+    /*
+     ** Init Unordered List shortcode
+     */
+    function qodeInitUnorderedListAnimation(){
+        $j(window).on('elementor/frontend/init', function () {
+            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_unordered_list.default', function() {
+	            initListAnimation();
             } );
         });
     }
@@ -8347,6 +8347,36 @@ function qodePanelArea(){
 (function($) {
     'use strict';
 
+    var elementorCardsGallery = {};
+    qode.modules.elementorCardsGallery = elementorCardsGallery;
+
+    elementorCardsGallery.qodeInitElementorCardsGallery = qodeInitElementorCardsGallery;
+
+
+    elementorCardsGallery.qodeOnWindowLoad = qodeOnWindowLoad;
+
+    $(window).on('load', qodeOnWindowLoad );
+
+    /*
+     ** All functions to be called on $(window).load() should be in this function
+     */
+    function qodeOnWindowLoad() {
+        qodeInitElementorCardsGallery();
+    }
+
+    function qodeInitElementorCardsGallery(){
+        $j(window).on('elementor/frontend/init', function () {
+            qodeCardsGallery();
+            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_cards_gallery.default', function() {
+                qodeCardsGallery();
+            } );
+        });
+    }
+
+})(jQuery);
+(function($) {
+    'use strict';
+
     var elementorCardsSlider = {};
     qode.modules.elementorCardsSlider = elementorCardsSlider;
 
@@ -8379,43 +8409,13 @@ function qodePanelArea(){
 (function($) {
     'use strict';
 
-    var elementorCardsGallery = {};
-    qode.modules.elementorCardsGallery = elementorCardsGallery;
+    var elementorEllipticalSlider = {};
+    qode.modules.elementorEllipticalSlider = elementorEllipticalSlider;
 
-    elementorCardsGallery.qodeInitElementorCardsGallery = qodeInitElementorCardsGallery;
-
-
-    elementorCardsGallery.qodeOnWindowLoad = qodeOnWindowLoad;
-
-    $(window).on('load', qodeOnWindowLoad );
-
-    /*
-     ** All functions to be called on $(window).load() should be in this function
-     */
-    function qodeOnWindowLoad() {
-        qodeInitElementorCardsGallery();
-    }
-
-    function qodeInitElementorCardsGallery(){
-        $j(window).on('elementor/frontend/init', function () {
-            qodeCardsGallery();
-            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_cards_gallery.default', function() {
-                qodeCardsGallery();
-            } );
-        });
-    }
-
-})(jQuery);
-(function($) {
-    'use strict';
-
-    var elementorContentMenu = {};
-    qode.modules.elementorContentMenu = elementorContentMenu;
-
-    elementorContentMenu.qodeInitElementorContentMenu = qodeInitElementorContentMenu;
+    elementorEllipticalSlider.qodeInitElementorEllipticalSlider = qodeInitElementorEllipticalSlider;
 
 
-    elementorContentMenu.qodeOnWindowLoad = qodeOnWindowLoad;
+    elementorEllipticalSlider.qodeOnWindowLoad = qodeOnWindowLoad;
 
     $(window).on('load', qodeOnWindowLoad );
 
@@ -8423,17 +8423,13 @@ function qodePanelArea(){
      ** All functions to be called on $(window).load() should be in this function
      */
     function qodeOnWindowLoad() {
-        qodeInitElementorContentMenu();
+        qodeInitElementorEllipticalSlider();
     }
 
-    function qodeInitElementorContentMenu(){
+    function qodeInitElementorEllipticalSlider(){
         $j(window).on('elementor/frontend/init', function () {
-            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_content_menu.default', function() {
-                createContentMenu();
-                createSelectContentMenu();
-                contentMenuPosition();
-                contentMenuCheckLastSection();
-                contentMenuScrollTo();
+            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_elliptical_slider.default', function() {
+                qodeInitEllipticalSlider();
             } );
         });
     }
@@ -8471,13 +8467,13 @@ function qodePanelArea(){
 (function($) {
     'use strict';
 
-    var elementorEllipticalSlider = {};
-    qode.modules.elementorEllipticalSlider = elementorEllipticalSlider;
+    var elementorContentMenu = {};
+    qode.modules.elementorContentMenu = elementorContentMenu;
 
-    elementorEllipticalSlider.qodeInitElementorEllipticalSlider = qodeInitElementorEllipticalSlider;
+    elementorContentMenu.qodeInitElementorContentMenu = qodeInitElementorContentMenu;
 
 
-    elementorEllipticalSlider.qodeOnWindowLoad = qodeOnWindowLoad;
+    elementorContentMenu.qodeOnWindowLoad = qodeOnWindowLoad;
 
     $(window).on('load', qodeOnWindowLoad );
 
@@ -8485,13 +8481,17 @@ function qodePanelArea(){
      ** All functions to be called on $(window).load() should be in this function
      */
     function qodeOnWindowLoad() {
-        qodeInitElementorEllipticalSlider();
+        qodeInitElementorContentMenu();
     }
 
-    function qodeInitElementorEllipticalSlider(){
+    function qodeInitElementorContentMenu(){
         $j(window).on('elementor/frontend/init', function () {
-            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_elliptical_slider.default', function() {
-                qodeInitEllipticalSlider();
+            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_content_menu.default', function() {
+                createContentMenu();
+                createSelectContentMenu();
+                contentMenuPosition();
+                contentMenuCheckLastSection();
+                contentMenuScrollTo();
             } );
         });
     }
@@ -9416,35 +9416,6 @@ function qodePanelArea(){
 
 })(jQuery);
 (function($) {
-    'use strict';
-
-    var elementorScrollingImage = {};
-    qode.modules.elementorScrollingImage = elementorScrollingImage;
-
-    elementorScrollingImage.qodeInitElementorScrollingImage = qodeInitElementorScrollingImage;
-
-
-    elementorScrollingImage.qodeOnWindowLoad = qodeOnWindowLoad;
-
-    $(window).on('load', qodeOnWindowLoad);
-
-    /*
-     ** All functions to be called on $(window).load() should be in this function
-     */
-    function qodeOnWindowLoad() {
-        qodeInitElementorScrollingImage();
-    }
-
-    function qodeInitElementorScrollingImage(){
-        $j(window).on('elementor/frontend/init', function () {
-            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_scrolling_image.default', function() {
-                qodeScrollingImage();
-            } );
-        });
-    }
-
-})(jQuery);
-(function($) {
 	'use strict';
 	
 	var elementorPortfolioListStacked = {};
@@ -9764,6 +9735,35 @@ function qodePanelArea(){
         };
     }
     
+})(jQuery);
+(function($) {
+    'use strict';
+
+    var elementorScrollingImage = {};
+    qode.modules.elementorScrollingImage = elementorScrollingImage;
+
+    elementorScrollingImage.qodeInitElementorScrollingImage = qodeInitElementorScrollingImage;
+
+
+    elementorScrollingImage.qodeOnWindowLoad = qodeOnWindowLoad;
+
+    $(window).on('load', qodeOnWindowLoad);
+
+    /*
+     ** All functions to be called on $(window).load() should be in this function
+     */
+    function qodeOnWindowLoad() {
+        qodeInitElementorScrollingImage();
+    }
+
+    function qodeInitElementorScrollingImage(){
+        $j(window).on('elementor/frontend/init', function () {
+            elementorFrontend.hooks.addAction( 'frontend/element_ready/bridge_scrolling_image.default', function() {
+                qodeScrollingImage();
+            } );
+        });
+    }
+
 })(jQuery);
 (function($) {
     'use strict';

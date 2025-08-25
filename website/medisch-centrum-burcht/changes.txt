@@ -1,3 +1,13 @@
+30.8.8.3
+- Added WooCommerce 10.x.x compatibility
+- Updated Revolution Slider to 6.7.35
+- Updated WPBakery page builder to 8.6.1
+- Updated LayerSlider to 7.15.1
+- Updated Bridge Core to 3.3.4.3
+- Updated Qode Real Estate to 1.1.7.2
+- Real Estate Property List improved on search click
+- Fixed Qode Image Gallery in elementor, pretyphoto option
+
 30.8.8.2
 - Updated Bridge Core to 3.3.4.2
 - Fixed issue with templates load
