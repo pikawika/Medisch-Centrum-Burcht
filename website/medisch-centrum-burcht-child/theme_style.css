@@ -1,0 +1,114 @@
+.testimonial_image_holder {
+    margin: 0 0 39px;
+}
+
+.testimonials .testimonial_text_inner p.testimonial_author {
+    margin-top: 28px;
+}
+
+.testimonials_holder .flex-direction-nav li {
+    height: 40px;
+}
+
+.testimonials_holder .flex-direction-nav a {
+    height: 40px;
+    width: 40px;
+    border-color: #e1e1e1;
+    border-radius: 0;
+}
+
+.testimonials_holder .flex-direction-nav a:before {
+    line-height: 37px;
+    height: 40px;
+    width: 36px;
+    font-size: 20px;
+    color: #fea694;
+}
+
+.testimonials_holder .flex-direction-nav a:hover {
+    background-color: #fea694;
+    border-color: #fea694
+}
+
+.q_icon_with_title.large.center .icon_text_holder .icon_title {
+    margin-bottom: 11px;
+}
+
+.q_icon_with_title.small .icon_text_holder .icon_title {
+    margin-bottom: 12px;
+}
+
+.qode-shadow-column>.vc_column-inner {
+    box-shadow: 3px 4px 12px 0px rgba(0, 0, 0, 0.05);
+}
+
+.qode-card-slider-holder .controls .button {
+    box-shadow: none;
+}
+
+.qode-card-slider-holder .qode-type1-gradient-bottom-to-top-text span {
+    background: transparent;
+    -webkit-text-fill-color: #fd8b74;
+}
+
+.qode-card-slider-holder .qode-type1-gradient-bottom-to-top-text.button:hover {
+    background-color: #fd8b74;
+}
+
+.qode-card-slider-holder .qode-type1-gradient-bottom-to-top-text span:hover {
+    -webkit-text-fill-color: #fff;
+}
+
+.qode-card-slider-holder .controls .button.prev {
+    left: -100px;
+}
+
+.qode-card-slider-holder .controls .button.next {
+    right: -100px;
+}
+
+.qode-advanced-image-gallery .owl-dots {
+    margin: 39px 0 0;
+}
+
+.q_progress_bar .progress_title {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.q_progress_bar {
+    margin: 0 0 15px;
+}
+
+nav.main_menu ul li a span.underline_dash,
+nav.vertical_menu ul li a span.underline_dash {
+    bottom: 0px;
+}
+
+.qode-shadow-row {
+    box-shadow: 3px 4px 12px 0px rgba(0, 0, 0, 0.05);
+}
+
+header.sticky .header_bottom {
+    box-shadow: 3px 4px 12px 0px rgba(0, 0, 0, 0.05);
+}
+
+header:not(.with_hover_bg_color) nav.main_menu>ul>li:hover>a {
+    opacity: 1;
+}
+
+.qode-card-slider-holder .qode-card-slider .slide {
+    padding: 0 14px;
+}
+
+header.sticky .header_inner_right .qbutton {
+    color: #000;
+    border-color: #000 !important;
+}
+
+header.sticky .header_inner_right .qbutton:hover {
+    color: #fff;
+    border-color: #356b57 !important;
+}
