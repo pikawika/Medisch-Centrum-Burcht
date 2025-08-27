@@ -35,7 +35,9 @@ Template: medisch-centrum-burcht
 ################################################
 */
 
-/* Buttons */
+/******************
+* Buttons
+******************/
 .MCB_button {
     border-radius: 20px;
 }
@@ -80,7 +82,9 @@ Template: medisch-centrum-burcht
     }
 }
 
-/* images */
+/******************
+* Images
+******************/
 .MCB_image .vc_single_image-wrapper {
     border-radius: 20px;
     overflow: hidden;
@@ -92,7 +96,23 @@ Template: medisch-centrum-burcht
     transform: translateY(-4px);
 }
 
-/* CTA bottom page */
+/******************
+* Text alignment
+******************/
+
+.MCB_justify * {
+    text-align: justify;
+    text-align-last: left;
+}
+
+.MCB_justify_center * {
+    text-align: justify;
+    text-align-last: center;
+}
+
+/******************
+* CTA Bottom
+******************/
 .MCB_CTA_pagebottom_block {
     background-color: var(--MCB-main-dark)
 }
@@ -145,7 +165,9 @@ Template: medisch-centrum-burcht
 ################################################
 */
 
-/* Rounded home slider */
+/******************
+* Home slider
+******************/
 .MCB_home_slider_block_slider .wpb_wrapper {
     position: relative;
     margin: 0 10vw;
@@ -160,7 +182,9 @@ Template: medisch-centrum-burcht
     border-radius: inherit !important;
 }
 
-/* Home slider CTAs */
+/******************
+* Home slider CTAs
+******************/
 .MCB_home_slider_block_CTAs>.section_inner {
     background-color: var(--MCB-universal-grey-faded);
     margin-top: -150px;
@@ -175,7 +199,9 @@ Template: medisch-centrum-burcht
     text-align: center;
 }
 
-/* home_artsen */
+/******************
+* Home artsen
+******************/
 .MCB_home_artsen_block_arts_row_image_left {
     padding-right: 50px;
 }
@@ -184,7 +210,9 @@ Template: medisch-centrum-burcht
     padding-left: 50px;
 }
 
-/* Sfeerbeelden seperator */
+/******************
+* Home Sfeerbeelden
+******************/
 
 .MCB_home_sfeerbeelden_block .qode-card-slider-holder .qode-type1-gradient-bottom-to-top-text span {
     background: transparent;
