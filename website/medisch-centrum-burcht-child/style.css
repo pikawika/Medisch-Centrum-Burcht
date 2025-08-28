@@ -454,3 +454,33 @@ input.wpcf7-form-control.wpcf7-quiz,
         margin-bottom: 0;
     }
 }
+
+/* 
+################################################
+# Artsen CSS
+################################################
+*/
+
+/******************
+* Seperator image
+******************/
+
+.MCB_separator_image .vc_single_image-wrapper {
+    aspect-ratio: 16 / 10;
+    height: auto;
+    min-height: 280px;
+    max-height: 1000px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    clip-path: polygon(0% 8vw, 100% 0%, 100% calc(100% - 8vw), 0% 100%);
+}
+
+.MCB_separator_image .vc_single_image-wrapper img.vc_single_image-img {
+    width: 100%;
+    height: 100%;
+    max-height: none !important;
+    object-fit: cover;
+    object-position: center;
+}
