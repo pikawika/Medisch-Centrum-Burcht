@@ -27,3 +27,9 @@ function contactform_dequeue_scripts()
 }
 add_action('wp_enqueue_scripts', 'contactform_dequeue_scripts', 99);
 //END hide captcha
+
+// Register styles for the shortcodes
+wp_register_style('icon-with-text-style', get_stylesheet_directory_uri() . '/css/icon_with_text_style.css', array(), filemtime(get_stylesheet_directory() . '/css/icon_with_text_style.css'));
+
+// include shortcodes
+require_once(__DIR__ . '/shortcodes/icon_with_text_list.php');

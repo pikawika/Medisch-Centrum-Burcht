@@ -8,7 +8,7 @@ Version: 30.8.8.2a
 Template: medisch-centrum-burcht
 */
 @import url("../medisch-centrum-burcht/style.css");
-@import url("./theme_style.css");
+@import url("./css/style_theme_supplied.css");
 
 /* ---------- Brand palette (greens â†’ aquas â†’ supportive navy) ---------- */
 :root {
@@ -111,8 +111,34 @@ Template: medisch-centrum-burcht
 }
 
 /******************
+* Header
+******************/
+
+.MCB_header {
+    background-color: var(--MCB-main-light);
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.MCB_header .vc_column-inner {
+    width: 100%;
+}
+
+.MCB_header_title * {
+    color: var(--MCB-universal-white);
+    margin: 0;
+    font-size: 55px;
+    line-height: 55px;
+}
+
+
+/******************
 * CTA Bottom
 ******************/
+
 .MCB_CTA_pagebottom_block {
     background-color: var(--MCB-main-dark)
 }
@@ -121,6 +147,54 @@ Template: medisch-centrum-burcht
     color: var(--MCB-main-light);
     font-size: 54px;
     line-height: 54px;
+}
+
+/******************
+* Text style
+******************/
+
+.MCB_small_title h2 {
+    font-size: 24px;
+    line-height: 24px;
+}
+
+@media only screen and (max-width: 767px) {
+    .MCB_small_title h2 {
+        font-size: 26px;
+        line-height: 28px;
+        word-break: break-word;
+    }
+}
+
+
+/******************
+* Equal height columns
+******************/
+
+/* Make text centered wrt image */
+.MCB_row_with_equal_height_columns_with_centered_content .full_section_inner,
+.MCB_row_with_equal_height_columns_with_centered_content .section_inner_margin {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.MCB_row_with_equal_height_columns_with_centered_content .MCB_row_with_equal_height_columns_with_centered_content_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 991px) {
+    .MCB_row_with_equal_height_columns_with_centered_content .full_section_inner,
+    .MCB_row_with_equal_height_columns_with_centered_content .section_inner_margin {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .MCB_row_with_equal_height_columns_with_centered_content .MCB_row_with_equal_height_columns_with_centered_content_column {
+        width: 100%;
+    }
 }
 
 /* 
@@ -210,6 +284,7 @@ Template: medisch-centrum-burcht
     padding-left: 50px;
 }
 
+
 /******************
 * Home Sfeerbeelden
 ******************/
@@ -230,4 +305,123 @@ Template: medisch-centrum-burcht
 .MCB_home_sfeerbeelden_block .slide img {
     border-radius: 20px;
     overflow: hidden;
+}
+
+/* 
+################################################
+# Contact CSS
+################################################
+*/
+
+/******************
+* Google maps
+******************/
+
+.MCB_responsive_gmaps :last-child {
+    max-width: 100%;
+    margin-bottom: -5px;
+}
+
+/******************
+* Contact form
+******************/
+
+.MCB_contact_form_rounded_background {
+    background-color: var(--MCB-universal-grey-faded);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.MCB_contact_form_rounded_background .vc_column-inner {
+    padding: 0;
+}
+
+/******************
+* Contact form 7
+******************/
+
+input.wpcf7-form-control.wpcf7-text:focus,
+textarea.wpcf7-form-control.wpcf7-textarea:focus,
+select.wpcf7-form-control.wpcf7-select:focus,
+input.wpcf7-form-control.wpcf7-date:focus {
+    box-shadow: 0 0 20px var(--MCB-main-light);
+    transition: 0.3s ease;
+}
+
+input.wpcf7-form-control.wpcf7-text,
+textarea.wpcf7-form-control.wpcf7-textarea,
+select.wpcf7-form-control.wpcf7-select,
+input.wpcf7-form-control.wpcf7-date {
+    transition: 0.3s ease;
+}
+
+.wpcf7-acceptance .wpcf7-list-item {
+    margin-left: 0;
+}
+
+.MCB_form_half_width_row {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.MCB_form_half_width_row .MCB_form_half_width_item {
+    width: calc(100% / 2 - 10px);
+    box-sizing: border-box;
+}
+
+.MCB_form_container p {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#respond textarea,
+#respond input[type='text'],
+#respond input[type='email'],
+.contact_form input[type='text'],
+.contact_form textarea,
+.comment_holder #respond textarea,
+.comment_holder #respond input[type='text'],
+.comment_holder #respond input[type='email'],
+input.wpcf7-form-control.wpcf7-text,
+input.wpcf7-form-control.wpcf7-number,
+input.wpcf7-form-control.wpcf7-date,
+textarea.wpcf7-form-control.wpcf7-textarea,
+select.wpcf7-form-control.wpcf7-select,
+input.wpcf7-form-control.wpcf7-quiz,
+.post-password-form input[type='password'] {
+    color: var(--MCB-text-light);
+    border-radius: 10px;
+}
+
+.wpcf7-submit {
+    border-radius: 20px !important;
+}
+
+.MCB_captcha_form_block {
+    margin-top: 30px;
+}
+
+.MCB_captcha_form_block p {
+    color: var(--faded-text);
+    margin-bottom: 0 !important;
+    text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+    .MCB_form_half_width_row {
+        display: block !important;
+    }
+
+    .MCB_form_half_width_row .MCB_form_half_width_item {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .MCB_interitemcontent_margin_bottom {
+        margin-bottom: 0;
+    }
 }
