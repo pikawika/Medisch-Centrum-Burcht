@@ -10,7 +10,6 @@ Template: medisch-centrum-burcht
 @import url("../medisch-centrum-burcht/style.css");
 @import url("./css/style_theme_supplied.css");
 
-/* ---------- Brand palette (greens â†’ aquas â†’ supportive navy) ---------- */
 :root {
     /* Main colors */
     --MCB-main-strong: #2b7a78;
@@ -26,6 +25,17 @@ Template: medisch-centrum-burcht
     --MCB-text-strong: #1a252f;
     --MCB-text-light: #5f6f75;
     --MCB-text-white: #ffffff;
+
+    /* breakpoints */
+    --width-breakpoint-slider-1: 1024px;
+    --width-breakpoint-slider-2: 778px;
+    --width-breakpoint-slider-3: 480px;
+    --width-breakpoint-1: 1400px;
+    --width-breakpoint-2: 1200px;
+    --width-breakpoint-3: 1000px;
+    --width-breakpoint-4: 778px;
+    --width-breakpoint-5: 600px;
+    --width-breakpoint-6: 480px;
 }
 
 
@@ -186,6 +196,7 @@ Template: medisch-centrum-burcht
 }
 
 @media (max-width: 991px) {
+
     .MCB_row_with_equal_height_columns_with_centered_content .full_section_inner,
     .MCB_row_with_equal_height_columns_with_centered_content .section_inner_margin {
         flex-direction: column;
@@ -195,6 +206,17 @@ Template: medisch-centrum-burcht
     .MCB_row_with_equal_height_columns_with_centered_content .MCB_row_with_equal_height_columns_with_centered_content_column {
         width: 100%;
     }
+}
+
+/******************
+* Padding for columns
+******************/
+.MCB_PR50_md {
+    padding-right: 50px;
+}
+
+.MCB_PL50_md {
+    padding-left: 50px;
 }
 
 /* 
@@ -250,6 +272,24 @@ Template: medisch-centrum-burcht
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+@media only screen and (max-width: 2000px) {
+    .MCB_home_slider_block_slider .wpb_wrapper {
+        margin: 0 100px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .MCB_home_slider_block_slider .wpb_wrapper {
+        margin: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .MCB_home_slider_block_slider .wpb_wrapper {
+        margin: 0 30px;
+    }
+}
+
 .MCB_home_slider_block_slider sr7-module,
 .MCB_home_slider_block_slider sr7-content,
 .MCB_home_slider_block_slider canvas {
@@ -271,17 +311,6 @@ Template: medisch-centrum-burcht
     margin-top: -150px;
     padding: 20px;
     text-align: center;
-}
-
-/******************
-* Home artsen
-******************/
-.MCB_home_artsen_block_arts_row_image_left {
-    padding-right: 50px;
-}
-
-.MCB_home_artsen_block_arts_row_image_right {
-    padding-left: 50px;
 }
 
 
